@@ -1,19 +1,22 @@
-# Yolo
+# Real-time Object Detection with Phoenix and Python
 
-To start your Phoenix server:
+In this repository you find the code described in the [Real-time Object Detection with Phoenix and Python](https://www.poeticoding.com/real-time-object-detection-with-phoenix-and-python/) article by Alvise Susmel.
+I slightly adapted some parts:
 
-  * Install dependencies with `mix deps.get`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+  * updated to Phoenix 1.5
+  * added LiveView
+  * added Live Dashboard
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Configuration
+Configure the `Yolo.Worker` in [`config/dev.exs`](config/dev.exs)
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+```elixir
+config :yolo, Yolo.Worker,
+  python: "python", # with Anaconda3 and yolo env is "/opt/anaconda3/envs/yolo/bin/python"
+  detect_script: "python_scripts/detect.py",
+  model: {:system, "YOLO_MODEL"}
+```
 
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+* `:python` is the path of your python3.6 executable
+* `:detect_script` is the path of the [`detect.py`](python_scripts/detect.py) script.
+* just leave `:model` set to `{:system, "YOLO_MODEL"}` - it will load the model name from the `YOLO_MODEL` environment variable.
