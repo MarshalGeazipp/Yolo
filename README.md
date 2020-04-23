@@ -1,6 +1,7 @@
 # Real-time Object Detection with Phoenix and Python
 
 In this repository you find the code described in the [Real-time Object Detection with Phoenix and Python](https://www.poeticoding.com/real-time-object-detection-with-phoenix-and-python/) article by Alvise Susmel.
+
 I slightly adapted some parts:
 
   * updated to Phoenix 1.5
