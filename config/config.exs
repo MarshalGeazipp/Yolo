@@ -12,7 +12,7 @@ config :yolo, YoloWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "IJ27dvL5B8R+i+kUG/eCi1fxdgVo0QBb4L4Df58wuJc6Yt+WuDlGF0fNfc0WKTdP",
   render_errors: [view: YoloWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Yolo.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub_server: Yolo.PubSub
 
 # Configures Elixir's Logger
 config :logger, :console,
