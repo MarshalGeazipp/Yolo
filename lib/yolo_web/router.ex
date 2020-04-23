@@ -1,5 +1,6 @@
 defmodule YoloWeb.Router do
   use YoloWeb, :router
+  import Phoenix.LiveDashboard.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -25,4 +26,11 @@ defmodule YoloWeb.Router do
   # scope "/api", YoloWeb do
   #   pipe_through :api
   # end
+
+  if Mix.env() == :dev do
+    scope "/" do
+      pipe_through :browser
+      live_dashboard "/dashboard"
+    end
+  end
 end

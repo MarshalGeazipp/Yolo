@@ -40,8 +40,9 @@ defmodule Yolo.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.1"},
       {:uuid, "~> 1.1"},
-      {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
-      {:floki, ">= 0.0.0", only: :test}
+      {:phoenix_live_view, "~> 0.12.0"},
+      {:floki, ">= 0.0.0", only: :test},
+      {:phoenix_live_dashboard, "~> 0.1"}
     ]
   end
 end
