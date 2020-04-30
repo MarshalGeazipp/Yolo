@@ -1,10 +1,10 @@
-<%# <button id="start_stop">Start</button>
+<button id="start_stop">Start</button>
 <div class="camera-container scaled-camera">
     <div id="camera"></div>
     <canvas id="objects" width="1280" height="720"></canvas>
-</div> %>
+</div>
 
-
+<%#
 <video id="player" controls></video>
 <script>
     // Prefer camera resolution nearest to 1280x720.
@@ -24,4 +24,4 @@
         };
     })
     .catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
-</script>
+</script> %>
